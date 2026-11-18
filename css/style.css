@@ -720,13 +720,6 @@ main {
   font-size: 13px;
 }
 
-.filters-form__note {
-  margin: -10px 0 0;
-  color: var(--color-muted);
-  font-size: 13px;
-  text-align: center;
-}
-
 /* ==============================
    9. Страница товара
    ============================== */

@@ -8,6 +8,7 @@
   <link rel="icon" href="images/madshop-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/catalog-filters.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Перейти к содержимому</a>
@@ -49,7 +50,7 @@
       <aside class="catalog-filters" aria-labelledby="filters-title">
         <h2 class="catalog-filters__title" id="filters-title">Фильтры</h2>
 
-        <form class="filters-form" action="#" method="get">
+        <form class="filters-form" id="catalog-filters">
           <div class="filters-form__field">
             <label class="filters-form__label" for="catalog-search">Поиск</label>
             <input class="filters-form__input" id="catalog-search" name="search" type="search" placeholder="Название товара">
@@ -89,19 +90,18 @@
             </div>
           </fieldset>
 
-          <button class="button button--primary" type="button" disabled>Применить</button>
-          <p class="filters-form__note">Фильтрация станет доступна позже.</p>
+          <button class="button button--primary" type="submit">Применить</button>
         </form>
       </aside>
 
       <section class="catalog-products" aria-labelledby="catalog-title">
         <div class="catalog-products__heading">
           <h2 class="catalog-products__title" id="catalog-title">Все товары</h2>
-          <p class="catalog-products__count">6 товаров</p>
+          <p class="catalog-products__count" id="catalog-result" role="status">6 товаров</p>
         </div>
 
         <div class="products-grid products-grid--catalog">
-          <article class="product-card product-card--featured">
+          <article class="product-card product-card--featured" data-category="input">
             <span class="product-card__badge">Хит</span>
             <a class="product-card__image-link" href="product.html">
               <img class="product-card__image" src="images/keyboard-forge-k75.png" srcset="images/responsive/keyboard-forge-k75-384.webp 384w, images/responsive/keyboard-forge-k75-768.webp 768w" sizes="(min-width: 1280px) 285px, (min-width: 1024px) 33vw, (min-width: 640px) 45vw, calc(100vw - 62px)" width="480" height="480" alt="Чёрная механическая клавиатура Forge K75">
@@ -110,23 +110,23 @@
             <h3 class="product-card__title"><a href="product.html">Forge K75</a></h3>
             <p class="product-card__description">75%, Hot Swap, PBT-кейкапы и подключение USB-C.</p>
             <div class="product-card__footer">
-              <p class="product-card__price">7 490 ₽</p>
+              <p class="product-card__price"><data value="7490">7 490 ₽</data></p>
               <a class="button button--primary product-card__button" href="order.html?product=Forge%20K75">Заказать</a>
             </div>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="input">
             <img class="product-card__image" src="images/mouse-pulse-m20.png" srcset="images/responsive/mouse-pulse-m20-384.webp 384w, images/responsive/mouse-pulse-m20-768.webp 768w" sizes="(min-width: 1280px) 285px, (min-width: 1024px) 33vw, (min-width: 640px) 45vw, calc(100vw - 62px)" width="480" height="480" alt="Чёрная беспроводная мышь Pulse M20" loading="lazy">
             <p class="product-card__category">Мыши</p>
             <h3 class="product-card__title">Pulse M20</h3>
             <p class="product-card__description">Беспроводная мышь весом 59 г с сенсором 12 000 DPI.</p>
             <div class="product-card__footer">
-              <p class="product-card__price">2 990 ₽</p>
+              <p class="product-card__price"><data value="2990">2 990 ₽</data></p>
               <a class="button button--primary product-card__button" href="order.html?product=Pulse%20M20">Заказать</a>
             </div>
           </article>
 
-          <article class="product-card product-card--discount">
+          <article class="product-card product-card--discount" data-category="audio">
             <span class="product-card__badge">−15%</span>
             <img class="product-card__image" src="images/headphones-echo-h40.png" srcset="images/responsive/headphones-echo-h40-384.webp 384w, images/responsive/headphones-echo-h40-768.webp 768w" sizes="(min-width: 1280px) 285px, (min-width: 1024px) 33vw, (min-width: 640px) 45vw, calc(100vw - 62px)" width="480" height="480" alt="Чёрные беспроводные наушники Echo H40" loading="lazy">
             <p class="product-card__category">Наушники</p>
@@ -135,42 +135,42 @@
             <div class="product-card__footer">
               <p class="product-card__price">
                 <span class="product-card__old-price">7 390 ₽</span>
-                6 290 ₽
+                <data value="6290">6 290 ₽</data>
               </p>
               <a class="button button--primary product-card__button" href="order.html?product=Echo%20H40">Заказать</a>
             </div>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="input">
             <img class="product-card__image" src="images/webcam-focus-c10.png" srcset="images/responsive/webcam-focus-c10-384.webp 384w, images/responsive/webcam-focus-c10-768.webp 768w" sizes="(min-width: 1280px) 285px, (min-width: 1024px) 33vw, (min-width: 640px) 45vw, calc(100vw - 62px)" width="480" height="480" alt="Чёрная веб-камера Focus C10" loading="lazy">
             <p class="product-card__category">Веб-камеры</p>
             <h3 class="product-card__title">Focus C10</h3>
             <p class="product-card__description">Full HD 60 FPS, автофокус и встроенный микрофон.</p>
             <div class="product-card__footer">
-              <p class="product-card__price">4 590 ₽</p>
+              <p class="product-card__price"><data value="4590">4 590 ₽</data></p>
               <a class="button button--primary product-card__button" href="order.html?product=Focus%20C10">Заказать</a>
             </div>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="accessories">
             <img class="product-card__image" src="images/lightbar-beam-l1.png" srcset="images/responsive/lightbar-beam-l1-384.webp 384w, images/responsive/lightbar-beam-l1-768.webp 768w" sizes="(min-width: 1280px) 285px, (min-width: 1024px) 33vw, (min-width: 640px) 45vw, calc(100vw - 62px)" width="480" height="480" alt="Лампа Beam L1 с креплением на монитор и отдельным регулятором" loading="lazy">
             <p class="product-card__category">Освещение</p>
             <h3 class="product-card__title">Beam L1</h3>
             <p class="product-card__description">Лампа для монитора с регулировкой яркости и пультом.</p>
             <div class="product-card__footer">
-              <p class="product-card__price">3 790 ₽</p>
+              <p class="product-card__price"><data value="3790">3 790 ₽</data></p>
               <a class="button button--primary product-card__button" href="order.html?product=Beam%20L1">Заказать</a>
             </div>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="accessories">
             <span class="product-card__badge product-card__badge--new">Новинка</span>
             <img class="product-card__image" src="images/hub-link-dock-7.png" srcset="images/responsive/hub-link-dock-7-384.webp 384w, images/responsive/hub-link-dock-7-768.webp 768w" sizes="(min-width: 1280px) 285px, (min-width: 1024px) 33vw, (min-width: 640px) 45vw, calc(100vw - 62px)" width="480" height="480" alt="Тёмно-серый USB-C хаб Link Dock 7 с кабелем и боковыми портами" loading="lazy">
             <p class="product-card__category">Аксессуары</p>
             <h3 class="product-card__title">Link Dock 7</h3>
             <p class="product-card__description">Семь портов, HDMI 4K, Power Delivery и картридер.</p>
             <div class="product-card__footer">
-              <p class="product-card__price">5 290 ₽</p>
+              <p class="product-card__price"><data value="5290">5 290 ₽</data></p>
               <a class="button button--primary product-card__button" href="order.html?product=Link%20Dock%207">Заказать</a>
             </div>
           </article>
