@@ -39,8 +39,20 @@
     return `${item.title}: ${formatPrice(finalPrice)}. Статус: ${getProductStatus(item)}.`;
   }
 
+  const originalPrice = formatPrice(product.price);
+  const discount = formatPrice(calculateDiscount(product.price, product.discountPercent));
+  const summary = createProductSummary(product);
+
+  const demo = document.getElementById('product-demo');
+  const output = document.getElementById('product-demo-output');
+
+  if (demo && output) {
+    output.textContent = `${summary} Исходная цена: ${originalPrice}. Учебная скидка: ${discount} (${product.discountPercent}%).`;
+    demo.hidden = false;
+  }
+
   console.table(product);
-  console.log('Цена:', formatPrice(product.price));
-  console.log('Скидка:', formatPrice(calculateDiscount(product.price, product.discountPercent)));
-  console.log('Краткое описание:', createProductSummary(product));
+  console.log('Цена:', originalPrice);
+  console.log('Скидка:', discount);
+  console.log('Краткое описание:', summary);
 })();
