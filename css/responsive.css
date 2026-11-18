@@ -1,0 +1,208 @@
+/* Базовая раскладка для узких экранов */
+
+:root {
+  --page-gutter: clamp(16px, 3vw, 24px);
+}
+
+img {
+  height: auto;
+}
+
+main,
+.site-header__inner,
+.site-footer__inner,
+.site-footer__bottom {
+  padding-inline: var(--page-gutter);
+}
+
+.site-header__inner {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.site-nav__link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 8px;
+}
+
+.section__heading,
+.buyer-note,
+.contact-cta,
+.hero__facts,
+.site-footer__bottom {
+  flex-wrap: wrap;
+}
+
+.hero,
+.products-grid,
+.advantages-grid,
+.contact-grid,
+.info-grid,
+.catalog-layout,
+.product-detail,
+.specs-layout,
+.checkout-layout,
+.order-form__row,
+.site-footer__inner {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.hero {
+  padding: clamp(16px, 4vw, 56px);
+}
+
+.hero__title {
+  font-size: clamp(30px, 6vw, 68px);
+}
+
+.hero__visual {
+  width: min(100%, 480px);
+  margin-inline: auto;
+}
+
+.hero__badge {
+  right: 2%;
+}
+
+.contact-card__link {
+  overflow-wrap: anywhere;
+}
+
+.catalog-products,
+.checkout-card,
+.order-form__field,
+.filters-form__range > *,
+.table-wrapper {
+  min-width: 0;
+}
+
+.filters-form__range {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.order-form__input,
+.order-form__select,
+.order-form__textarea {
+  min-height: 44px;
+}
+
+.order-form__textarea {
+  resize: vertical;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table-wrapper:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.product-table {
+  min-width: 400px;
+}
+
+.order-dialog {
+  max-height: calc(100dvh - 32px);
+  padding: clamp(14px, 3vw, 24px);
+}
+
+.order-dialog__close {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+}
+
+.toast {
+  right: var(--page-gutter);
+  bottom: var(--page-gutter);
+  width: min(360px, 100% - 2 * var(--page-gutter));
+}
+
+/* Планшеты и широкие экраны */
+
+@media (min-width: 640px) {
+  .products-grid,
+  .advantages-grid,
+  .contact-grid,
+  .info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 90px;
+  }
+
+  .site-header {
+    position: sticky;
+  }
+
+  .site-header__inner {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .site-nav__link {
+    padding-inline: 12px;
+  }
+
+  .product-detail {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  }
+
+  .order-form__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-footer__inner {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .products-grid,
+  .advantages-grid,
+  .contact-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .products-grid--catalog {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .catalog-layout {
+    grid-template-columns: 260px minmax(0, 1fr);
+  }
+
+  .specs-layout {
+    grid-template-columns: minmax(0, 1fr) 320px;
+  }
+
+  .checkout-layout {
+    grid-template-columns: minmax(0, 1fr) 340px;
+  }
+
+  .catalog-filters,
+  .checkout-info {
+    position: sticky;
+  }
+}
+
+@media (min-width: 1280px) {
+  .products-grid--catalog {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
