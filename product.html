@@ -7,6 +7,7 @@
   <title>Клавиатура Forge K75 — MadShop</title>
   <link rel="icon" href="images/madshop-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Перейти к содержимому</a>
@@ -42,6 +43,10 @@
         <img
           class="product-detail__image"
           src="images/keyboard-forge-k75.png"
+          srcset="images/responsive/keyboard-forge-k75-384.webp 384w,
+                  images/responsive/keyboard-forge-k75-768.webp 768w,
+                  images/responsive/keyboard-forge-k75-960.webp 960w"
+          sizes="(min-width: 1200px) 560px, (min-width: 768px) 45vw, calc(100vw - 96px)"
           width="720"
           height="720"
           alt="Чёрная механическая клавиатура Forge K75 с фиолетовыми клавишами"
@@ -88,19 +93,21 @@
       </div>
 
       <div class="specs-layout">
-        <table class="product-table">
-          <caption>Основные характеристики Forge K75</caption>
-          <tbody>
-            <tr><th scope="row">Тип</th><td>Механическая клавиатура</td></tr>
-            <tr><th scope="row">Формат</th><td>75%, 82 клавиши</td></tr>
-            <tr><th scope="row">Переключатели</th><td>Линейные, Hot Swap</td></tr>
-            <tr><th scope="row">Подключение</th><td>Проводное, USB-C</td></tr>
-            <tr><th scope="row">Подсветка</th><td>Белая, 5 уровней яркости</td></tr>
-            <tr><th scope="row">Материал кейкапов</th><td>PBT, двойное литьё</td></tr>
-            <tr><th scope="row">Вес</th><td>780 г</td></tr>
-            <tr><th scope="row">Гарантия</th><td>12 месяцев</td></tr>
-          </tbody>
-        </table>
+        <div class="table-wrapper" tabindex="0" role="region" aria-labelledby="specs-caption">
+          <table class="product-table">
+            <caption id="specs-caption">Основные характеристики Forge K75</caption>
+            <tbody>
+              <tr><th scope="row">Тип</th><td>Механическая клавиатура</td></tr>
+              <tr><th scope="row">Формат</th><td>75%, 82 клавиши</td></tr>
+              <tr><th scope="row">Переключатели</th><td>Линейные, Hot Swap</td></tr>
+              <tr><th scope="row">Подключение</th><td>Проводное, USB-C</td></tr>
+              <tr><th scope="row">Подсветка</th><td>Белая, 5 уровней яркости</td></tr>
+              <tr><th scope="row">Материал кейкапов</th><td>PBT, двойное литьё</td></tr>
+              <tr><th scope="row">Вес</th><td>780 г</td></tr>
+              <tr><th scope="row">Гарантия</th><td>12 месяцев</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <aside class="package-card">
           <h3 class="package-card__title">В комплекте</h3>

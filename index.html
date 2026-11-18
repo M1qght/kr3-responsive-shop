@@ -11,6 +11,7 @@
   <title>MadShop — компьютерная периферия</title>
   <link rel="icon" href="images/madshop-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -78,13 +79,22 @@
 
       <div class="hero__visual">
         <span class="hero__badge">Выбор покупателей</span>
-        <img
-          class="hero__image"
-          src="images/keyboard-forge-k75.png"
-          width="640"
-          height="640"
-          alt="Механическая клавиатура Forge K75"
-        >
+        <picture>
+          <source
+            type="image/webp"
+            srcset="images/responsive/keyboard-forge-k75-384.webp 384w,
+                    images/responsive/keyboard-forge-k75-768.webp 768w,
+                    images/responsive/keyboard-forge-k75-960.webp 960w"
+            sizes="(min-width: 1200px) 460px, (min-width: 900px) 38vw, (min-width: 540px) 480px, 84vw"
+          >
+          <img
+            class="hero__image"
+            src="images/keyboard-forge-k75.png"
+            width="640"
+            height="640"
+            alt="Механическая клавиатура Forge K75"
+          >
+        </picture>
       </div>
     </section>
 
@@ -104,6 +114,8 @@
             <img
               class="product-card__image"
               src="images/keyboard-forge-k75.png"
+              srcset="images/responsive/keyboard-forge-k75-384.webp 384w, images/responsive/keyboard-forge-k75-768.webp 768w"
+              sizes="(min-width: 1200px) 348px, (min-width: 1024px) 30vw, (min-width: 640px) 45vw, calc(100vw - 62px)"
               width="480"
               height="480"
               alt="Чёрная механическая клавиатура Forge K75"
@@ -130,6 +142,8 @@
             <img
               class="product-card__image"
               src="images/mouse-pulse-m20.png"
+              srcset="images/responsive/mouse-pulse-m20-384.webp 384w, images/responsive/mouse-pulse-m20-768.webp 768w"
+              sizes="(min-width: 1200px) 348px, (min-width: 1024px) 30vw, (min-width: 640px) 45vw, calc(100vw - 62px)"
               width="480"
               height="480"
               alt="Чёрная беспроводная мышь Pulse M20"
@@ -155,6 +169,8 @@
             <img
               class="product-card__image"
               src="images/headphones-echo-h40.png"
+              srcset="images/responsive/headphones-echo-h40-384.webp 384w, images/responsive/headphones-echo-h40-768.webp 768w"
+              sizes="(min-width: 1200px) 348px, (min-width: 1024px) 30vw, (min-width: 640px) 45vw, calc(100vw - 62px)"
               width="480"
               height="480"
               alt="Чёрные беспроводные наушники Echo H40"
