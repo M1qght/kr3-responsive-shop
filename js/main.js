@@ -3,7 +3,11 @@ function markInvalidFields(form) {
   const fields = Array.from(form.elements).filter((element) => element.willValidate);
 
   fields.forEach((field) => {
-    field.toggleAttribute('aria-invalid', !field.checkValidity());
+    if (field.checkValidity()) {
+      field.removeAttribute('aria-invalid');
+    } else {
+      field.setAttribute('aria-invalid', 'true');
+    }
   });
 }
 
