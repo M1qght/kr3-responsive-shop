@@ -23,6 +23,20 @@
 
 Проверены все пять страниц на ширинах 360, 430, 768, 1024 и 1440 px.
 
+## ПР №13. Изображения, ARIA и Lighthouse
+
+- Проверены `alt` у всех изображений. Для фотографий уточнены описания, у логотипов рядом с названием магазина оставлен пустой `alt`.
+- Убраны дублирующие и неприменимые ARIA-атрибуты. Поля с ошибками теперь получают `aria-invalid="true"`. Для уведомления о заявке используется `role="status"`.
+- Lighthouse 13.6.0, профиль Mobile, категория Accessibility. Каждая страница получила 100/100 после внесения изменений.
+
+| Страница | HTML-отчёт |
+| --- | --- |
+| Главная | [Lighthouse](lighthouse/accessibility-report.html) |
+| Каталог | [Lighthouse](lighthouse/accessibility-catalog.html) |
+| Товар | [Lighthouse](lighthouse/accessibility-product.html) |
+| Заявка | [Lighthouse](lighthouse/accessibility-order.html) |
+| Контакты | [Lighthouse](lighthouse/accessibility-contacts.html) |
+
 ## Автор
 
 Учайкин Максим Сергеевич, ЭФБО-10-25.

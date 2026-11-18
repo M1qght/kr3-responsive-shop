@@ -19,7 +19,7 @@
 
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__brand" href="index.html" aria-label="MadShop — на главную">
+      <a class="site-header__brand" href="index.html">
         <img class="site-header__logo" src="images/madshop-logo.svg" width="48" height="48" alt="">
         <span class="site-header__name">MadShop</span>
       </a>
@@ -61,7 +61,7 @@
           <a class="button button--secondary" href="#advantages">Почему мы?</a>
         </div>
 
-        <ul class="hero__facts" aria-label="Преимущества заказа">
+        <ul class="hero__facts">
           <li class="hero__fact">
             <strong>1 год</strong>
             <span>гарантии</span>
@@ -92,7 +92,7 @@
             src="images/keyboard-forge-k75.png"
             width="640"
             height="640"
-            alt="Механическая клавиатура Forge K75"
+            alt="Механическая клавиатура Forge K75 с фиолетовыми клавишами"
           >
         </picture>
       </div>
@@ -332,9 +332,11 @@
     </form>
   </dialog>
 
-  <div class="toast" id="success-message" role="status" aria-live="polite" hidden>
-    <strong>Заявка отправлена</strong>
-    <span>Мы свяжемся с вами в ближайшее время.</span>
+  <div role="status">
+    <div class="toast" id="success-message" hidden>
+      <strong>Заявка отправлена</strong>
+      <span>Мы свяжемся с вами в ближайшее время.</span>
+    </div>
   </div>
 </body>
 </html>
